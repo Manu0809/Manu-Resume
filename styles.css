@@ -1,0 +1,218 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header with Floating Animation */
+header {
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+    background-size: 20px 20px;
+    animation: float 6s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-10px, -10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1rem;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #ffcc00;
+}
+
+/* Section Animations and Effects */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+section:hover::before {
+    left: 100%;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    animation: slideIn 1s ease-in-out;
+}
+
+h3 {
+    color: #555;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Card with Floating Effect */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer with Gradient Animation */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    animation: gradientShift 5s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #333, #555);
+    }
+    100% {
+        background: linear-gradient(135deg, #555, #333);
+    }
+}
+
+/* Floating Icons for Decoration */
+.floating-icon {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.1);
+    animation: floatIcon 5s infinite ease-in-out;
+}
+
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}
